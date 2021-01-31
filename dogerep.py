@@ -10,7 +10,7 @@ def get_curr():
     print(res.status_code)
     r = res.json()
     data = r["dogeinr"]["last"]
-    os.system(f'echo `date "+%T"` {data} >> list')
+    os.system(f'echo `date "+%T"` {data} >> list.txt')
 
 
 def repeat_interval():
@@ -18,5 +18,3 @@ def repeat_interval():
     time.sleep(10)
     repeat_interval()
 
-
-repeat_interval()
