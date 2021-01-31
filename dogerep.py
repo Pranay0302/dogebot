@@ -1,8 +1,7 @@
 import requests
 import time, os
-from decouple import config
 
-url = config("URL")
+url = "https://api.wazirx.com/api/v2/tickers"
 
 
 def get_curr():
