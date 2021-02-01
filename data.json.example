@@ -1,0 +1,8 @@
+{
+    "total-coins": x+y+z+...,
+    "people": [
+        { "name": "X", "coins": x },
+        { "name": "Y", "coins": y },
+        { "name": "Z", "coins": z },...
+    ]
+}

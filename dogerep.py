@@ -44,7 +44,6 @@ def repeat_interval():
     try:
         get_curr()
     except Exception as ex:
-        # print(ex)
         print("\n bye bye")
         exit(0)
     try:
@@ -60,7 +59,6 @@ if __name__ == "__main__":
     try:
         repeat_interval()
     except Exception as ex:
-        # print(ex)
         print("\n bye bye")
         exit(0)
     finally:
