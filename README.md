@@ -12,5 +12,5 @@ getting the dogecoin report from [wazirx api](https://api.wazirx.com/api/v2/tick
 
 ### Features
 
-- getting live updates from the api (realtime)
+- getting live updates from the api
 - alarm mechanism (when it crosses a certain value, it'll notify us)
