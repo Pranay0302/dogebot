@@ -144,3 +144,5 @@ cython_debug/
 list.txt
 
 data.json
+
+*.mp3
