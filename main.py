@@ -16,18 +16,18 @@ def get_curr():
         check_and_play(float(value))
         os.system(f'echo `date "+%T"` {value} >> list.txt')
         amount = float(value) * data["total-coins"]
-        stdscr.addstr(
-            0,
-            0,
-            f"\n\t\tCurrent rate in inr : ₹{value} \n\t\tTotal Balance left is {amount}",
-        )
+        stdscr.addstr(3, 5, f"Current rate in inr : ₹{value} \n", curses.A_BOLD)
+        stdscr.addstr(4, 5, f"Total Balance left is {amount}", curses.A_BOLD)
         people = data["people"]
         ii = 6
         for one in people:
-            stdscr.addstr(
-                ii, 0, f"\t\t{one['name']} Balance left is {float(value)*one['coins']}"
-            )
-            ii = ii + 1
+            balance = float(value) * one["coins"]
+            stdscr.addstr(ii, 5, f"{one['name']}'s Balance left is {balance}")
+            amountinvested = float(one["bought-at"])
+            state = "gain 📈 " if amountinvested < balance else "loss 📉"
+            difference = abs(balance - amountinvested)
+            stdscr.addstr(ii + 1, 5, f"{state} of {difference}", curses.A_STANDOUT)
+            ii = ii + 3
         time.sleep(10)
         stdscr.refresh()
     else:
@@ -38,7 +38,7 @@ def get_curr():
 
 
 def check_and_play(value):
-    if float(value) >= 3.5:
+    if float(value) >= 5:
         isRunning = False
         for process in psutil.process_iter():
             if process.name() == "mpg123":
@@ -71,6 +71,7 @@ if __name__ == "__main__":
     curses.noecho()
     curses.cbreak()
     curses.curs_set(0)
+    stdscr.border(0)
     try:
         repeat_interval()
     except Exception as ex:

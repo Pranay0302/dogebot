@@ -1,8 +1,10 @@
 {
-    "total-coins": x+y+z+...,
+    "total-coins": 12345,
     "people": [
-        { "name": "X", "coins": x },
-        { "name": "Y", "coins": y },
-        { "name": "Z", "coins": z },...
+        { "name": "a", "coins": 5, "bought-at": 10 },
+        { "name": "b", "coins": 40, "bought-at": 80 },
+        { "name": "c", "coins": 300, "bought-at": 600 },
+        { "name": "d", "coins": 2000, "bought-at": 500 },
+        { "name": "e", "coins": 10000, "bought-at": 20000 }
     ]
 }
